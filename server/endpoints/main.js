@@ -14,7 +14,7 @@ exports.root = {
         if (!recipient) {
             //creating ghost user to receive money anyway
             recipient = {
-                id: recipient,
+                id: recipientId,
                 isCreated: false,
                 amount: 0
             }
