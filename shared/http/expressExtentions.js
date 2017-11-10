@@ -5,11 +5,6 @@ exports.extentions = (req, res, next) => {
         if (authString) {
             req.userId = global.utils.encryptor.decrypt(authString);
         }
-        req.throwIfNotAuthorized = function () {
-            if (!req.userId) {
-                throw global.utils.createError(null, global.constants.errorCodes.notAuthorized);
-            }
-        }
     } catch (error) {
         console.log(error);
     }

@@ -47,12 +47,10 @@ describe('Root handlers test', function () {
 
     it('Transfer money test', async() => {
         var req1Mock = {
-            userId: user1id,
-            throwIfNotAuthorized: () => {}
+            userId: user1id
         };
         var req2Mock = {
-            userId: user2id,
-            throwIfNotAuthorized: () => {}
+            userId: user2id
         };
         var sendAmount = 17;
         var transaction = await mainEndpoint.root.sendMoney({recipientId: user2id, amount: sendAmount}, req1Mock);

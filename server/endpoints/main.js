@@ -4,13 +4,11 @@ var { buildSchema } = require('graphql');
 
 exports.root = {
     getUser: async ({ }, req) => {
-        req.throwIfNotAuthorized();
         var user = await global.db.users.getUser(req.userId);
         user.transactions = await global.db.transactions.getUsersTransactions(user.id);
         return user;
     },
     sendMoney: async ({ recipientId, amount }, req) => {
-        req.throwIfNotAuthorized();
         var user = await global.db.users.getUser(req.userId);
         var recipient = await global.db.users.getUser(recipientId);
         if (!recipient) {
@@ -45,6 +43,13 @@ exports.root = {
 exports.init = (app) => {
     var schemaNode = fs.readFileSync('./schemas/main.graphql', 'utf8');
     var schema = buildSchema(schemaNode);
+
+    app.use('/main', function (req, res, next) {
+        if(!req.userId) {
+            return res.status(401).end();
+        }
+        next();
+    });
 
     app.use('/main', graphqlHTTP({
         schema: schema,
