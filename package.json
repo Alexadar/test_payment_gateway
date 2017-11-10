@@ -1,0 +1,20 @@
+{
+  "name": "paypal_payment_gateway_api",
+  "version": "1.0.0",
+  "description": "paypal_payment_gateway__api",
+  "private": true,
+  "dependencies": {
+    "chai": "^4.1.2",
+    "express": "4.16.2",
+    "express-graphql": "^0.6.11",
+    "graphql": "^0.11.7",
+    "mocha": "^4.0.1",
+    "mongodb": "2.2.31",
+    "paypal-rest-sdk": "1.7.1",
+    "request": "^2.83.0",
+    "simple-encryptor": "^1.1.1"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w"
+  }
+}

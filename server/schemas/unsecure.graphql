@@ -1,0 +1,9 @@
+type User {
+    id: String
+    amount: Float
+}
+
+type Query {
+    createUser(id: String, secret: String): User
+    login(id: String, secret: String): String
+}

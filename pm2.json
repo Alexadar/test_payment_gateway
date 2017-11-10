@@ -1,0 +1,9 @@
+{
+    "apps": [{
+        "name": "payment_gateway_test_server",
+        "script": "app.js",
+        "error_file": "./../logs/api_err.log",
+        "out_file": "./../logs/api_out.log",
+        "cwd": "./server"
+    }]
+}
