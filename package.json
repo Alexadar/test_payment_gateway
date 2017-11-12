@@ -10,8 +10,6 @@
     "graphql": "^0.11.7",
     "mocha": "^4.0.1",
     "mongodb": "2.2.31",
-    "paypal-rest-sdk": "1.7.1",
-    "request": "^2.83.0",
     "simple-encryptor": "^1.1.1"
   },
   "scripts": {
